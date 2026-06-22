@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Quiz - Domanda</title>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="form-group">
+        <form action="/scelta4" method="post">
+            <% try { %>
+            <h2><%= risultato[0] %></h2>
+            <br><br>
+            <% for (let i = 1; i < 5; i++) { %>
+                <input type="radio" id="op_<%= i %>" name="opzioni" value="<%= i %>" required>
+                <label for="op_<%= i %>"><%= risultato[i] %></label><br>
+            <% } %>
+            <% for (let i = 0; i < 6; i++) { %>
+                <input type="hidden" name="risultato[]" value="<%= risultato[i] %>">
+            <% } %>
+
+            <input type="hidden" name="argument" value="<%= argument %>">
+            <input type="hidden" name="name" value="<%= name %>">
+            <input type="hidden" name="difficolta" value="<%= difficolta %>">
+            <% for (let i = 0; i < domande_precedenti.length; i++) { %>
+                <input type="hidden" name="domande_precedenti[]" value="<%= domande_precedenti[i] %>">
+            <% } %>
+            <br><br>
+            <input type="submit" value="Invia">
+            <% } catch { %>
+                Errore nella risposta
+            <% } %>
+        </form>
+    </div>
+ 
+    <% if (scelta1) { %>
+        <% let ris = parseFloat(risultato[5]); %>
+        <% let sce = parseFloat(scelta1); %>
+        <% if (ris == scelta1) { %>
+            <h1 class="corretto">Risposta corretta!</h1>
+        <% } else { %>
+            <h1 class="sbagliato">Risposta sbagliata</h1>
+        <% } %>
+    <% } %>
+
+    <form action="/quiz5" method="post">
+        <input type="hidden" name="argomento" value="<%= argument %>">
+        <input type="hidden" name="name" value="<%= name %>">
+        <input type="hidden" name="difficolta" value="<%= difficolta %>">
+        <% for (let i = 0; i < domande_precedenti.length; i++) { %>
+            <input type="hidden" name="domande_precedenti[]" value="<%= domande_precedenti[i] %>">
+        <% } %>
+        <button type="submit">Avanti</button>
+    </form>
+
+</div>
+
+</body>
+</html>

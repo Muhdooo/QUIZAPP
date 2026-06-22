@@ -1,0 +1,84 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #081958, #000000, #ffffff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #6a5acd;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%; 
+            box-shadow: 0 15px 35px rgba(106, 90, 205, 0.3),
+                        0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        label {
+            color: #9993f3;
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        h1 {
+            color: #8a7fff;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .form-group {
+            margin-bottom: 40px;
+        }
+
+        
+
+        input[type="text"]
+        {
+            width: 100%;
+            padding: 15px;
+            background: rgba(20, 20, 40, 0.8);
+            border: 2px solid #4a4a6a;
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        input[type="text"]:focus
+         {
+            border-color: #6a5acd;
+            box-shadow: 0 0 15px rgba(106, 90, 205, 0.5);
+            background: rgba(30, 30, 60, 0.9);
+        }
+
+        .button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .button:hover {
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }

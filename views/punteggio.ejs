@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container2">
+    <h1>Quiz completato!!!</h1><br><br>
+    <h1><%= name %> il tuo punteggio è di:</h1>
+
+    <%if(punteggio==0 || punteggio==20 || punteggio==40){%>
+        <h1 class="rosso"><%= punteggio%> su 100</h1><br><br><br><br><br><br><br>
+    <%}%>
+
+    <%if(punteggio==60){%>
+        <h1 class="giallo"><%= punteggio%> su 100</h1><br><br><br><br><br><br><br>
+    <%}%>
+
+    <%if(punteggio==80 || punteggio==100){%>
+        <h1 class="verde"><%= punteggio%> su 100</h1><br><br><br><br><br><br><br>
+    <%}%>
+
+    
+
+    
+    <form action="/">
+    <button type="submit" class="button">Clicca per giocare di nuovo</button>
+    </form>
+    </div>
+</body>
+</html>
